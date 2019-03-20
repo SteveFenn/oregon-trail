@@ -20,6 +20,6 @@ type Inventory struct {
 }
 
 // Implements "Continue on trail" behaviour
-func travel(rand rand.Rand, inv Inventory) Inventory {
-	return inv
+func travel(rand rand.Rand, distance int, date int, inv Inventory) (int, int, Inventory) {
+	return distance + 1, date + 1, inv
 }
