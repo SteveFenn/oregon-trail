@@ -30,7 +30,7 @@ func main(){
     },
     {
       "You're a hero!",
-      "You saved the local sheriff's daugher from robbers. You've earned a reward!",
+      "You saved the local sheriff's daughter from robbers. You've earned a reward!",
       []eventChange{
         {"money", 50},
       },
