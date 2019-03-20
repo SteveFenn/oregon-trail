@@ -8,10 +8,9 @@ import (
 
 func TestTravel(t *testing.T) {
 	r := rand.NewSource(99)
-	var inv inventory
+	var inv Inventory
 	for i := 0; i < 10; i++ {
 		inv = travel(*rand.New(r), inv)
 		fmt.Println(inv)
 	}
-
 }
