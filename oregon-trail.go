@@ -1,9 +1,10 @@
 package main
 
 import (
-  "fmt"
+	"fmt"
 )
 
-func main(){
-  fmt.Println("Hello Oregon Trail")
+func main() {
+	fmt.Println("Hello Oregon Trail")
+	Party()
 }
