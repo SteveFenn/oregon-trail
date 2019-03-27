@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func notMain() {
 	makeDecision()
 }
 
@@ -43,7 +43,7 @@ func continueTrail() {
 
 func shop() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.println("You have money")
+	fmt.Println("You have money")
 	fmt.Println("What would you like to buy?")
 	fmt.Println("1. Oxen")
 	fmt.Println("2. Food")
@@ -67,9 +67,11 @@ func shop() {
 
 func buyOxen() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.println("You have money")
+	fmt.Println("You have money")
 	fmt.Println("How many Oxen would you like to buy?")
 
 	text, _ := reader.ReadString('\n')
-	formattedText := strings.TrimSpace(text)
+	// formattedText := strings.TrimSpace(text)
+	_ = strings.TrimSpace(text)
+
 }
