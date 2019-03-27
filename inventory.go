@@ -3,7 +3,6 @@ package main
 // Parts ...
 type Parts struct {
 	wheel int
-	oxen  int
 	axel  int
 }
 

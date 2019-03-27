@@ -5,13 +5,15 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"strconv"
 )
 
 func notMain() {
-	makeDecision()
+	inv := Inventory{money: 20, oxen: 4, food: 10, parts: Parts{wheel: 4, axel: 2}}
+	makeDecision(inv)
 }
 
-func makeDecision() {
+func makeDecision(inv Inventory) {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Welcome to the fort what would you like to do?")
 	fmt.Println("1. Continue with the trail.")
@@ -26,14 +28,14 @@ func makeDecision() {
 	case "1":
 		continueTrail()
 	case "2":
-		fmt.Println("Good choice")
+		shop(inv)
 	case "3":
 		fmt.Println("Good choice")
 	case "4":
 		fmt.Println("Good choice")
 	default:
 		fmt.Println("Enter correct input")
-		makeDecision()
+		makeDecision(inv)
 	}
 }
 
@@ -41,7 +43,7 @@ func continueTrail() {
 	fmt.Println("Back on the trail...")
 }
 
-func shop() {
+func shop(inv Inventory) {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("You have money")
 	fmt.Println("What would you like to buy?")
@@ -54,24 +56,34 @@ func shop() {
 
 	switch formattedText {
 	case "1":
-		buyOxen()
+		buyOxen(inv)
 	case "2":
 		fmt.Println("Good choice")
 	case "3":
 		fmt.Println("Good choice")
 	default:
 		fmt.Println("Enter correct input")
-		shop()
+		shop(inv)
 	}
 }
 
-func buyOxen() {
+func buyOxen(inv Inventory) {
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("You have money")
 	fmt.Println("How many Oxen would you like to buy?")
 
 	text, _ := reader.ReadString('\n')
-	// formattedText := strings.TrimSpace(text)
-	_ = strings.TrimSpace(text)
+	newOxen, _ := strconv.Atoi(strings.TrimSpace(text))
+	inv.oxen = inv.oxen + newOxen
+
+	fmt.Printf("You have purchased %d Oxen\n", newOxen)
+	fmt.Printf("You now have %d Oxen\n", inv.oxen)
+}
+
+func buyFood() {
+	// reader := bufio.NewReader(os.Stdin)
+	fmt.Println("You have money")
+	fmt.Println("How much Food would you like to buy?")
+	// text, _ := reader.ReadString('\n')
 
 }
