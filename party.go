@@ -9,7 +9,7 @@ import (
 // PartyMembers ...
 type PartyMembers struct {
 	name   string
-	status string
+	status Status
 }
 
 // Status ...
