@@ -12,6 +12,16 @@ type PartyMembers struct {
 	status string
 }
 
+// Status ...
+type Status int
+
+// Dead Ill Well ...
+const (
+	Dead Status = 0
+	Ill  Status = 1
+	Well Status = 2
+)
+
 // Party ...
 func Party() []PartyMembers {
 	fmt.Println("The Oregon Trail")
@@ -22,28 +32,26 @@ func Party() []PartyMembers {
 	member3 := getUserInput("What is the name of the fourth member?:")
 	member4 := getUserInput("What is the name of the fifth member?:")
 
-	status := [3]string{"well", "ill", "dead"}
-
 	partyMembers := []PartyMembers{
 		{
 			leaderName,
-			status[0],
+			Well,
 		},
 		{
 			member1,
-			status[0],
+			Well,
 		},
 		{
 			member2,
-			status[0],
+			Well,
 		},
 		{
 			member3,
-			status[0],
+			Well,
 		},
 		{
 			member4,
-			status[0],
+			Well,
 		},
 	}
 	fmt.Println(partyMembers)
