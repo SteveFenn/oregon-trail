@@ -2,9 +2,10 @@ package main
 
 import (
 	"math/rand"
+	"time"
 )
 
 // Implements "Continue on trail" behaviour
-func travel(rand rand.Rand, distance int, date int, inv Inventory) (int, int, Inventory) {
-	return distance + 1, date + 1, inv
+func travel(rand rand.Rand, distance int, date time.Time, inv Inventory) (int, time.Time, Inventory) {
+	return distance + 1, date.AddDate(0, 0, 1), inv
 }
