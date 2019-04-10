@@ -4,12 +4,11 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
 )
 
-func notMain() {
-	inv := Inventory{money: 20, oxen: 4, food: 10, parts: Parts{wheel: 4, axel: 2}}
+func firstFort(inv Inventory) {
 	makeDecision(inv)
 }
 
