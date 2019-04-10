@@ -8,7 +8,7 @@ import (
 type event struct {
 	title       string
 	description string
-	changes     []effect
+	changes     effect
 }
 
 type effect struct {
@@ -33,8 +33,8 @@ func Events() {
 	// Pick an event from list
 	// Update inventory
 
-	event := pickEvent()
-	updateInventory(event)
+	// event := pickEvent()
+	updateInventory()
 }
 
 func updateInventory() {
@@ -46,27 +46,29 @@ func pickEvent() event {
 		{
 			"Oh noes! Bear Attack!!!",
 			"One of your oxen has been eaten by a bear, you find his remains scattered across the camp.",
-			[]effect{
-				inventoryChange{"oxen", -1},
+			effect{
+				inventoryChange: inventoryChange{"oxen", -1},
 			},
 		},
 		{
 			"You're a hero!",
 			"You saved the local sheriff's daughter from robbers. You've earned a reward!",
-			inventoryChange{
-				{"money", 50},
+			effect{
+				inventoryChange: inventoryChange{"money", 50},
 			},
 		},
 		{
 			"You've gone the wrong bloody way!",
 			"You trusted your instincts and they were wrong! You've gone off track and it takes you a couple of days to get back.",
-			dateChange{2},
+			effect{
+				dateChange: 2,
+			},
 		},
 		{
 			"Hold me closer tiny dancer",
 			"Your dancing impresses the local indians and they shower you with food. All those days infront of the mirror has paid off!",
-			inventoryChange{
-				{"food", 20},
+			effect{
+				inventoryChange: inventoryChange{"food", 20},
 			},
 		},
 	}
